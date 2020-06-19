@@ -1,3 +1,6 @@
+# Note about the knn is that it requires data into the numerical format
+# Most of the sklearn model requires data into the proper format i. e. numerical or the float
+
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import StandardScaler, MinMaxScaler
@@ -32,8 +35,8 @@ for i in range(1, 21):
     knn.fit(X_train, y_train)
     score.append(knn.score(X_test,y_test))
 
-# for i,j in enumerate(score):
-#     print(str(i+1) + " Nwighbours score is " + str(j))
+for i,j in enumerate(score):
+     print(str(i+1) + " Nwighbours score is " + str(j))
 
 neighbour = 6
 final_knn = KNeighborsClassifier(n_neighbors=neighbour)
